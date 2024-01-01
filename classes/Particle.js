@@ -1,7 +1,9 @@
 class Particle{
-    constructor(){
-        this.x = 100;
-        this.y = 100;
+    constructor( position ){
+        this.x = position.x;
+        this.y = position.y;
+        this.vx = Math.random() * 2 - 1;
+        this.vy = Math.random() * -5 - 1;
     }
 
     draw(){
@@ -12,6 +14,8 @@ class Particle{
     }
 
     update(){
+        this.x += this.vx;
+        this.y += this.vy;
         this.draw();
     }
 }
